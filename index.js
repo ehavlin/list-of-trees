@@ -1,33 +1,26 @@
 const treeForm = document.querySelector('#treeForm')
 
-function renderListItem(label, value) {
-  const item = document.createElement('li')
-  item.innerHTML = `${value}`
-
-  return item
-}
-
-function renderList(tree) {
-  const list = document.createElement('ul')
-
-  Object.keys(tree).map(function(label) {
-    const item = renderListItem(label, tree[label])
-    list.appendChild(item)
-  })
-
-  return list
-}
-
 function handleSubmit(ev) {
   ev.preventDefault()
   const f = ev.target
   const details = document.querySelector('#details')
 
-  const tree = {
-    name: f.treeName.value
-  }
-  
-  const list = renderList(tree)
+//   const tree = {
+//     name: f.treeName.value
+//   }
+  const list = document.createElement('ul')
+  details.appendChild(list);
+
+  const listTreeName = document.createElement('li')
+  listTreeName.textContent = f.treeName.value
+
+  const button = document.createElement('input')
+  button.type = 'button'
+  button.value = 'Favorite'
+  button.id = 'favoriteButton'
+
+  list.appendChild(listTreeName)
+  list.appendChild(button)
   details.insertBefore(list, details.firstChild)
 }
 
