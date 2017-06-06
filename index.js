@@ -1,27 +1,40 @@
 const treeForm = document.querySelector('#treeForm')
+const details = document.querySelector('#details')
 
 function handleSubmit(ev) {
   ev.preventDefault()
   const f = ev.target
-  const details = document.querySelector('#details')
+  
 
-//   const tree = {
-//     name: f.treeName.value
-//   }
   const list = document.createElement('ul')
-  details.appendChild(list);
+  //details.appendChild(list);
 
   const listTreeName = document.createElement('li')
   listTreeName.textContent = f.treeName.value
 
   const button = document.createElement('input')
   button.type = 'button'
-  button.value = 'Favorite'
+  button.value = 'Press to favorite'
   button.id = 'favoriteButton'
 
-  list.appendChild(listTreeName)
-  list.appendChild(button)
-  details.insertBefore(list, details.firstChild)
+  const div = document.createElement('div')
+  div.innerHTML = listTreeName.outerHTML + button.outerHTML + '<hr> </hr>'
+  details.insertBefore(div, details.firstChild)
+
+  const btn = document.getElementById('favoriteButton')
+  btn.addEventListener('click', function() {highlightRow(this)})
+  //list.appendChild(listTreeName)
+  //list.appendChild(button)
+  //details.insertBefore(list, details.firstChild)
+}
+
+function highlightRow(index){
+    if (index.value === 'Unfavorite'){
+        index.value = 'Press to favorite'
+    }
+    else {
+        index.value = 'Unfavorite'
+    }  
 }
 
 treeForm.addEventListener('submit', handleSubmit)
