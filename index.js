@@ -4,10 +4,8 @@ const details = document.querySelector('#details')
 function handleSubmit(ev) {
   ev.preventDefault()
   const f = ev.target
-  
 
   const list = document.createElement('ul')
-  //details.appendChild(list);
 
   const listTreeName = document.createElement('li')
   listTreeName.textContent = f.treeName.value
@@ -22,11 +20,7 @@ function handleSubmit(ev) {
   details.insertBefore(div, details.firstChild)
 
   const btn = document.getElementById('favoriteButton')
-  btn.addEventListener('click', function() {highlightRow(this)})
-  //list.appendChild(listTreeName)
-  //list.appendChild(button)
-  //details.insertBefore(list, details.firstChild)
-}
+  btn.addEventListener('click', function() {highlightRow(this)})}
 
 function highlightRow(index){
     if (index.value === 'Unfavorite'){
