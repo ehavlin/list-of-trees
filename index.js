@@ -33,13 +33,13 @@ function handleSubmit(ev) {
   button.type = 'button'
   button.value = 'Press to favorite'
   button.id = 'favoriteButton'
-  listTreeName.appendChild(button)
 
   const deleteButton = document.createElement('input')
   deleteButton.type = 'button'
   deleteButton.value = 'Press to delete'
   deleteButton.id = 'deleteButton'
   listTreeName.appendChild(deleteButton)
+  listTreeName.appendChild(button)
 
   const div = document.createElement('div')
   div.innerHTML = listTreeName.outerHTML + '<hr> </hr>'
