@@ -42,7 +42,6 @@ button {
     text-align: center;
     text-decoration: none;
     font-size: 12px;
-    transition-duration: 0.4s;
     float: right;
 }
 
@@ -51,10 +50,26 @@ button {
     color: white;
 }
 
-#deleteButton {
-    background-color: white; 
-    border: 2px solid darkred;
+#favoriteButtonClicked{
+    background-color: gold; 
+    color: white; 
+    border: 2px solid gold;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    float: right;
+}
+
+#favoriteButtonClicked:hover {
+    background-color: white;
     color: black;
+}
+
+#deleteButton {
+    background-color: darkred; 
+    border: 2px solid darkred;
+    color:white;
     padding: 10px 15px;
     text-align: center;
     text-decoration: none;
@@ -65,8 +80,9 @@ button {
 }
 
 #deleteButton:hover{
-    background-color: darkred;
-    color: white;
+    background-color: white;
+    color: black;
+    border: 2px solid darkred;
 } 
 
 hr {

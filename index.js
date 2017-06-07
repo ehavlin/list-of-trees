@@ -4,9 +4,11 @@ const details = document.querySelector('#details')
 function markFavorite(index){
     if (index.value === 'Unfavorite'){
         index.value = 'Press to favorite'
+        index.id = 'favoriteButton'
     }
     else {
         index.value = 'Unfavorite'
+        index.id = 'favoriteButtonClicked'
     }  
 }
 
